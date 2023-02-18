@@ -10,6 +10,13 @@ CLI-утилитка на ноде для тестовой отправки то
 2. `$ npm install`
 3. `$ npm run rebuild`
 
+В `.env` можно сложить переменные
+```bash
+HOST
+PORT
+DEFAULT_THREADS_NUMBER
+```
+чтобы не задавать их в параметрах
 
 ## Usage
 
