@@ -12,7 +12,7 @@ import { WialonClient } from './infrastructure/client/wialon'
 (async () => {
     const options = await YARGS.parseAsync()
     if (options.threads == 1) {
-        const client = new WialonClient(options.host, Number(options.port))
+        const client = new WialonClient(options.host||'localhost', Number(options.port||5167))
         const app = new WialonStressTest(client, options.devices as unknown as TraccarDeviceDTO[], options.points as unknown as GeoPointDTO[], options.delay)
         await app.run()
     } else {
