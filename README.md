@@ -4,11 +4,22 @@ CLI-утилитка на ноде для тестовой отправки то
 [[_TOC_]]
 
 
-## install
+## Docker image
 
-1. `$ git pull`
-2. `$ npm install`
-3. `$ npm run rebuild`
+В репе есть докерфайл, который пакует всё в образ, избавляя вас от необходимости иметь установленную ноду правильной версии:
+
+1. Склонировать репу `$ git clone`
+2. Собрать образ `$ docker build -t wialon-stress-test .`
+3. Run image `$ docker run wialon-stress-test ./build/index.js --host wialon.example.ru --port 5167 --devices 123456789 --points ./data/points-short.json`
+
+NB! `--points ./data/points-short.json` - это файл внутри контейнера, а не локальный
+
+## install locally
+
+1. Склонировать репу `$ git clone`
+2. Установить зависимости `$ npm install`
+3. Скомпилировать в js `$ npm run rebuild`
+4. Отправить точки `./build/index.js --host wialon.example.ru --port 5167 --devices 123456789 --points ./data/points-short.json`
 
 В `.env` можно сложить переменные
 ```bash

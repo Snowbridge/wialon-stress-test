@@ -29,10 +29,7 @@ export const YARGS = yargs(process.argv.slice(2))
         devices: {
             type: 'string',
             array: true,
-            desc: [
-                'Массив id устройств. Если передано имя существующего файла, то устройства вычитываются из него',
-                'Формат файла - это ответ от GET https://traccar-host/api/devices'
-            ].join('\n'),
+            desc: 'Массив id устройств. Если передано имя существующего файла, то устройства вычитываются из него',
             coerce: (devices: string[]) => {
                 if (fs.existsSync(devices[0])) {
                     const data = JSON.parse(fs.readFileSync(devices[0]).toString()) as TraccarDeviceDTO[]
@@ -71,6 +68,6 @@ export const YARGS = yargs(process.argv.slice(2))
             demandOption: true
         }
     })
-    .example('$0 --host traccar.gruzi.ru --port 5167 --devices 6661366613 --points ./data/points-short.json', 'Выполнит передачу на прод грузи толпу точек из ./data/points-short.json для девайса с id 6661366613')
+    .example('$0 --host wialon.example.ru --port 5167 --devices 6661366613 --points ./data/points-short.json', 'Выполнит передачу на прод грузи толпу точек из ./data/points-short.json для девайса с id 6661366613')
     .strict()
     .wrap(140)

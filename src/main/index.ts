@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
 import 'dotenv/config'
-import { argv } from 'process';
-import { spawn, Worker } from 'threads';
+import { spawn, Worker } from 'threads'
 import { WialonStressTest } from './app/stress-test'
 import { GeoPointDTO } from './dto/geo-points-dto'
 import { TraccarDeviceDTO } from './dto/traccar-dto'

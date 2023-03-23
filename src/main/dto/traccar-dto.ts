@@ -1,3 +1,7 @@
+/**
+ * устройства хранятся в формате Traccar API
+ * это в действительности не имеет собого значения, но, если интересно, см https://traccar.org
+ **/ 
 export interface TraccarDeviceDTO{   
         id: number
         attributes: any
